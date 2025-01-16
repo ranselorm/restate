@@ -9,7 +9,6 @@ const Home = () => {
       <Link href="/sign-in" className="text-xl uppercase text-green-700">
         Sign In
       </Link>
-      ===
     </View>
   );
 };
