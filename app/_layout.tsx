@@ -22,7 +22,7 @@ const RootLayout = () => {
 
   if (!fontsLoaded) return null;
 
-  return <Stack />;
+  return <Stack screenOptions={{ headerShown: false }} />;
 };
 
 export default RootLayout;
