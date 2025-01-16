@@ -23,11 +23,11 @@ const SignIn = () => {
             <Text className="text-primary-100">Your Ideal Home</Text>
           </Text>
           <Text className="text-center mt-12 font-rubik text-black-200 text-lg ">
-            Login to Restate with Google
+            Login to Restate
           </Text>
           <TouchableOpacity
             onPress={handleLogin}
-            className="bg-white shadow-zinc-200 shadow-md py-2 rounded-full flex-row justify-center items-center w-full gap-x-4 mt-5"
+            className="bg-white shadow-zinc-300 shadow-md py-2 rounded-full flex-row justify-center items-center w-full gap-x-4 mt-5"
           >
             <Image
               source={icons.google}
@@ -35,7 +35,7 @@ const SignIn = () => {
               resizeMode="contain"
             />
             <Text className="text-lg font-rubik-medium text-black-200">
-              Continue With Google
+              Continue with Google
             </Text>
           </TouchableOpacity>
         </View>
