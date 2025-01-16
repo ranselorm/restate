@@ -24,9 +24,9 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="myapp"/>
+        <data android:scheme="aora"/>
         <data android:scheme="com.anonymous.testApp"/>
-        <data android:scheme="exp+testapp"/>
+        <data android:scheme="exp+restate"/>
       </intent-filter>
     </activity>
   </application>

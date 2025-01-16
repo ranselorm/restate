@@ -4,11 +4,12 @@ import { Link } from "expo-router";
 
 const Home = () => {
   return (
-    <View>
+    <View className="bg-primary-100 flex-1">
       <Text>Home screen</Text>
-      <Link href="/sign-in" className="text-3xl">
+      <Link href="/sign-in" className="text-xl uppercase text-green-700">
         Sign In
       </Link>
+      ===
     </View>
   );
 };

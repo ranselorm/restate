@@ -12,6 +12,23 @@ module.exports = {
         "rubik-semibold": ["Rubik-SemiBold", "sans-serif"],
         "rubik-light": ["Rubik-Light", "sans-serif"],
       },
+      colors: {
+        primary: {
+          100: "#0061FF",
+          200: "#0061FF1A",
+          300: "#0061FF2A",
+        },
+        accent: {
+          100: "#FBFBFD",
+        },
+        black: {
+          default: "#000000",
+          100: "#8C8E98",
+          200: "#666876",
+          200: "#191D31",
+        },
+        danger: "#F75555",
+      },
     },
   },
   plugins: [],
