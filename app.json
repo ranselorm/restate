@@ -16,7 +16,7 @@
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.testApp"
+      "package": "com.anonymous.restate"
     },
     "web": {
       "bundler": "metro",
