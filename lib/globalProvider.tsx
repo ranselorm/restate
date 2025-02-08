@@ -29,7 +29,7 @@ export const GlobalProvider = ({ children }: any) => {
 
   const isLoggedIn = !!user;
   return (
-    <GlobalContext.Provider value={undefined}>
+    <GlobalContext.Provider value={{ isLoggedIn, user, loading, refetch }}>
       {children}
     </GlobalContext.Provider>
   );

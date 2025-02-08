@@ -1,11 +1,10 @@
 import { Account, Avatars, Client, OAuthProvider } from "react-native-appwrite";
 import * as Linking from "expo-linking";
-import * as AuthSession from "expo-auth-session";
 import { openAuthSessionAsync } from "expo-web-browser";
 
 export const config = {
   platform: "com.ransel.restate",
-  endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
+  endpoint: "https://cloud.appwrite.io/v1",
   projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
 };
 
