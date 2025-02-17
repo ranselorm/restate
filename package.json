@@ -1,6 +1,6 @@
 {
-  "name": "Aora",
-  "main": "expo-router/entry",
+  "name": "ReState",
+  "main": "node_modules/expo-router/entry",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
