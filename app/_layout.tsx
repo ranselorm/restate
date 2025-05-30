@@ -25,7 +25,9 @@ const RootLayout = () => {
 
   return (
     // <GlobalProvider>
-    <Stack screenOptions={{ headerShown: false }} />
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+    </Stack>
     // </GlobalProvider>
   );
 };
