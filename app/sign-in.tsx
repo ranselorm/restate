@@ -37,7 +37,7 @@ const SignIn = () => {
             Let's Get You Closer To {"\n"}
             <Text className="text-primary-100">Your Ideal Home</Text>
           </Text>
-          <Text className="text-center mt-12 font-rubik text-black-200 text-lg ">
+          <Text className="text-center mt-10 font-rubik text-black-200 text-lg ">
             Login to Restate
           </Text>
           <TouchableOpacity
