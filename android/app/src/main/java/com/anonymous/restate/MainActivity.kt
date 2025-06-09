@@ -1,4 +1,4 @@
-package com.anonymous.testApp
+package com.anonymous.restate
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

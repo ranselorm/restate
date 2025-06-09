@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "899276569263",
+    "project_id": "restate-c6d9c",
+    "storage_bucket": "restate-c6d9c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899276569263:android:99074b1ffcfde4d631725a",
+        "android_client_info": {
+          "package_name": "com.anonymous.restate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899276569263-t0gbc96emu6nh64nl1v6a9b7g987d5ki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL9csCXzm75SUKv9irapXiXSXUa76Kxt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899276569263-t0gbc96emu6nh64nl1v6a9b7g987d5ki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
