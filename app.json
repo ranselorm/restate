@@ -47,23 +47,6 @@
             "./assets/fonts/Rubik-SemiBold.ttf"
           ]
         }
-      ],
-
-      "@react-native-firebase/app",
-      "@react-native-firebase/auth",
-
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "compileSdkVersion": 34,
-            "targetSdkVersion": 34,
-            "kotlinVersion": "1.9.25"
-          },
-          "ios": {
-            "useFrameworks": "static"
-          }
-        }
       ]
     ],
     "experiments": {
