@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -17,6 +17,13 @@ import { router } from "expo-router";
 const SignIn = () => {
   const handleLogin = async () => {
     console.log("Login with Google");
+  };
+
+  const [isRegister, setIsRegister] = useState(false);
+  // const [toggleLogin, setToggleLogin] = useState(false);
+
+  const toggleAuth = () => {
+    setIsRegister(!isRegister);
   };
 
   return (
@@ -114,7 +121,8 @@ const SignIn = () => {
               <Text className="font-rubik text-lg">or</Text>
 
               <TouchableOpacity
-                onPress={() => router.push("/sign-up")}
+                // onPress={() => router.push("/sign-up")}
+                // onPress={() => router.push("/sign-up")}
                 className="mt-5 border-primary-100 border py-3 rounded-lg justify-center items-center w-full flex-row gap-x-4"
               >
                 <Image source={icons.google} className="w-5 h-5 mr-3" />
@@ -124,11 +132,14 @@ const SignIn = () => {
                 </Text>
               </TouchableOpacity>
               <View className="flex-row justify-center items-center mt-5 gap-x-2">
-                <Text className="font-rubik">Not Registered?</Text>
+                <Text className="font-rubik">
+                  {" "}
+                  {isRegister ? "Already have an account?" : "Not Registered?"}
+                </Text>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={toggleAuth} activeOpacity={0.8}>
                   <Text className="font-rubik-bold text-primary-100">
-                    Register
+                    {isRegister ? "Login" : "Signup"}
                   </Text>
                 </TouchableOpacity>
               </View>
