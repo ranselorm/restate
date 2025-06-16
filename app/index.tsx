@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { ActivityIndicator, Button, Text, TextInput, View } from "react-native";
 import auth from "@react-native-firebase/auth";
 
@@ -11,10 +11,23 @@ const Home = () => {
   const signup = async () => {
     setLoading(true);
     try {
-      await auth().createUserWithEmailAndPassword(email, password);
-      console.log("User account created & signed in!");
+      const data = await auth().createUserWithEmailAndPassword(email, password);
+      console.log("User account created & signed in!", data);
     } catch (error) {
       console.error("Error signing up:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const signin = async () => {
+    setLoading(true);
+    try {
+      const data = await auth().signInWithEmailAndPassword(email, password);
+      console.log("User signed in!", data);
+      router.push("/(root)/(tabs)");
+    } catch (error) {
+      console.error("Error signing in:", error);
     } finally {
       setLoading(false);
     }
@@ -27,17 +40,17 @@ const Home = () => {
         Login
       </Link>
 
-      <View>
+      <View className="px-6">
         <Text>User Signup</Text>
         <TextInput
-          className=""
+          className="border border-gray-300 rounded p-2 mb-4"
           placeholder="email"
           value={email}
           autoCapitalize="none"
           onChangeText={setEmail}
         />
         <TextInput
-          className=""
+          className="border border-gray-300 rounded p-2 mb-4"
           placeholder="Password"
           secureTextEntry
           autoCapitalize="none"
@@ -46,7 +59,11 @@ const Home = () => {
         />
       </View>
 
-      {loading ? <ActivityIndicator /> : <Button title="Submit" />}
+      {loading ? (
+        <ActivityIndicator />
+      ) : (
+        <Button title="Submit" onPress={signin} />
+      )}
     </View>
   );
 };
