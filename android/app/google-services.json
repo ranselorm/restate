@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "899276569263-9n9mq2trjmm0f8hh1rq5a57eb521nsid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anonymous.restate",
+            "certificate_hash": "a4673199cfb19111f082bd94d46360c7f97c378f"
+          }
+        },
+        {
           "client_id": "899276569263-t0gbc96emu6nh64nl1v6a9b7g987d5ki.apps.googleusercontent.com",
           "client_type": 3
         }
