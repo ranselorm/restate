@@ -65,6 +65,7 @@ const Home = () => {
           <TouchableOpacity
             onPress={() => router.push("/sign-in")}
             className="bg-primary-100 shadow-zinc-300 shadow-md py-3 rounded-md flex-row justify-center items-center w-full gap-x-4 mt-24"
+            activeOpacity={1.2}
           >
             <Text className="text-lg font-rubik-medium text-white">
               GET STARTED
