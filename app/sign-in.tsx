@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "@/constants/images";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { router } from "expo-router";
 import icons from "@/constants/icons";
 
 const SignIn = () => {
@@ -30,6 +32,14 @@ const SignIn = () => {
 
   return (
     <SafeAreaView className="bg-white h-full">
+      <TouchableOpacity
+        onPress={() => router.back()}
+        className="px-10 mt-5"
+        activeOpacity={0.8}
+      >
+        <Ionicons name="arrow-back-outline" size={24} color="black" />
+      </TouchableOpacity>
+
       <ScrollView contentContainerClassName="h-full">
         <View className="px-10 flex-1 justify-between items-center py-10 pb-20">
           <View className="mt-10">
