@@ -22,11 +22,8 @@ const SignIn = () => {
   return (
     <SafeAreaView className="bg-white h-full">
       <ScrollView contentContainerClassName="h-full">
-        {/* <Image
-          source={images.onboarding}
-          className="w-full h-4/6"
-          resizeMode="contain"
-        /> */}
+        <View className="mx-auto"></View>
+
         {/* <View className="px-10">
           <Text className="font-rubik uppercase text-center text-base text-black-200">
             Welcome to Restate
@@ -55,7 +52,17 @@ const SignIn = () => {
         {/* <KeyboardAvoidingView > */}
         <View className="px-10 flex-1 justify-between items-center py-10 pb-20">
           <View className="mt-10">
-            <Text>Login</Text>
+            <Image
+              source={images.icon}
+              className="w-32 h-20 justify-center text-center mt-10"
+              resizeMode="contain"
+            />
+            <Text
+              className="text-center font-rubik mt-5"
+              style={{ fontSize: 20 }}
+            >
+              Login to continue
+            </Text>
           </View>
           <View className="w-full">
             <View>
@@ -104,11 +111,11 @@ const SignIn = () => {
               </Text>
             </TouchableOpacity>
             <View className="justify-center items-center mt-5">
-              <Text>or</Text>
+              <Text className="font-rubik text-lg">or</Text>
 
               <TouchableOpacity
                 onPress={() => router.push("/sign-up")}
-                className="mt-5 border-gray-300 border py-3 rounded-lg justify-center items-center w-full flex-row gap-x-4"
+                className="mt-5 border-primary-100 border py-3 rounded-lg justify-center items-center w-full flex-row gap-x-4"
               >
                 <Image source={icons.google} className="w-5 h-5 mr-3" />
                 <Text className="uppercase items-center justify-center text-base font-rubik-medium text-black-200 flex-row gap-x-4 space-x-4">
@@ -116,6 +123,15 @@ const SignIn = () => {
                   Continue with Google
                 </Text>
               </TouchableOpacity>
+              <View className="flex-row justify-center items-center mt-5 gap-x-2">
+                <Text className="font-rubik">Not Registered?</Text>
+
+                <TouchableOpacity>
+                  <Text className="font-rubik-bold text-primary-100">
+                    Register
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
             {/* </View> */}
           </View>
