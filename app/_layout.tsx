@@ -23,7 +23,7 @@ const RootLayout = () => {
   const segments = useSegments();
 
   const onAuthStateChanged = (user: FirebaseAuthTypes.User | null) => {
-    // console.log(user, "Auth state changed: ");
+    console.log(user, "Auth state changed: ");
     setUser(user);
     if (initializing) {
       setInitializing(false);

@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import { Link, router } from "expo-router";
-import { ActivityIndicator, Button, Text, TextInput, View } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  ScrollView,
+  Text,
+  TextInput,
+  View,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import auth from "@react-native-firebase/auth";
+import { SafeAreaView } from "react-native-safe-area-context";
+import icons from "@/constants/icons";
 
 const Home = () => {
   const [email, setEmail] = useState<string>("");
@@ -33,37 +44,35 @@ const Home = () => {
   };
 
   return (
-    <View>
-      <Text className="text-4xl text-red-400 uppercase">Home</Text>
-      <Link href="/sign-in" className="text-blue-500 underline bg-red-300">
-        Login
-      </Link>
-
-      <View className="px-6">
-        <Text>User Signup</Text>
-        <TextInput
-          className="border border-gray-300 rounded p-2 mb-4"
-          placeholder="email"
-          value={email}
-          autoCapitalize="none"
-          onChangeText={setEmail}
+    <SafeAreaView className="bg-white h-full">
+      <ScrollView contentContainerClassName="h-full">
+        <Image
+          source={require("../assets/images/onboarding.png")}
+          style={{ width: "100%", height: "66%" }}
+          resizeMode="contain"
         />
-        <TextInput
-          className="border border-gray-300 rounded p-2 mb-4"
-          placeholder="Password"
-          secureTextEntry
-          autoCapitalize="none"
-          value={password}
-          onChangeText={setPassword}
-        />
-      </View>
-
-      {loading ? (
-        <ActivityIndicator />
-      ) : (
-        <Button title="Submit" onPress={signin} />
-      )}
-    </View>
+        <View className="px-10">
+          <Text className="font-rubik uppercase text-center text-base text-black-200">
+            Welcome to Restate
+          </Text>
+          <Text className="font-rubik-bold text-center text-3xl text-black-200 mt-2">
+            Let's Get You Closer To {"\n"}
+            <Text className="text-primary-100">Your Ideal Home</Text>
+          </Text>
+          {/* <Text className="text-center mt-10 font-rubik text-black-200 text-lg ">
+            Login to Restate
+          </Text> */}
+          <TouchableOpacity
+            onPress={() => router.push("/sign-in")}
+            className="bg-primary-100 shadow-zinc-300 shadow-md py-3 rounded-md flex-row justify-center items-center w-full gap-x-4 mt-24"
+          >
+            <Text className="text-lg font-rubik-medium text-white">
+              GET STARTED
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
