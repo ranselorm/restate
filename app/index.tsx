@@ -25,7 +25,6 @@ const Home = () => {
     try {
       const data = await auth().signInWithEmailAndPassword(email, password);
       console.log("User signed in!", data);
-      router.push("/(root)/(tabs)");
     } catch (error) {
       console.error("Error signing in:", error);
     } finally {

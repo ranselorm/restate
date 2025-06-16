@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
-import { Slot, Stack } from "expo-router";
+import { router, Slot, Stack, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import "../global.css";
 import { useFonts } from "expo-font";
@@ -20,9 +20,10 @@ SplashScreen.setOptions({
 const RootLayout = () => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>();
+  const segments = useSegments();
 
   const onAuthStateChanged = (user: FirebaseAuthTypes.User | null) => {
-    console.log(user, "Auth state changed: ");
+    // console.log(user, "Auth state changed: ");
     setUser(user);
     if (initializing) {
       setInitializing(false);
@@ -42,6 +43,20 @@ const RootLayout = () => {
     "Rubik-Regular": require("../assets/fonts/Rubik-Regular.ttf"),
     "Rubik-SemiBold": require("../assets/fonts/Rubik-SemiBold.ttf"),
   });
+
+  useEffect(() => {
+    if (initializing) return;
+
+    const inAuthGroup = segments[0] === "(root)";
+
+    if (user && !inAuthGroup) {
+      router.replace("/(root)/(tabs)");
+    } else if (!user && inAuthGroup) {
+      router.replace("/sign-in");
+    }
+
+    console.log(inAuthGroup, "In auth group: ", segments);
+  }, [user, initializing]);
 
   useEffect(() => {
     if (fontsLoaded) {

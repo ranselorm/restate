@@ -1,14 +1,18 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
+import auth from "@react-native-firebase/auth";
 
 const Home = () => {
   return (
     <View className="">
       <Text>Home screen</Text>
-      <Link href="/sign-in" className="text-xl uppercase text-green-700">
-        Sign In
-      </Link>
+      <Pressable
+        className="text-xl uppercase text-green-700"
+        onPress={() => auth().signOut()}
+      >
+        <Text>Sign Out</Text>
+      </Pressable>
     </View>
   );
 };
