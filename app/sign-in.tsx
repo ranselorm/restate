@@ -72,7 +72,7 @@ const SignIn = () => {
               />
             </View>
             <View>
-              <Text className="text-base font-rubik text-black-200 font-bold my-2">
+              <Text className="text-base font-rubik text-black-200 font-bold mb-2 mt-4">
                 Password
               </Text>
 
@@ -90,13 +90,20 @@ const SignIn = () => {
             </Pressable> */}
             <TouchableOpacity
               // onPress={() => router.push("/sign-in")}
-              className="bg-primary-100 shadow-zinc-300 shadow-md py-3 rounded-md flex-row justify-center items-center w-full gap-x-4 mt-8"
+              className="bg-primary-100 py-3 rounded-lg justify-center items-center w-full mt-8"
               activeOpacity={1.2}
             >
               <Text className="text-base font-rubik-medium text-white">
                 LOGIN
               </Text>
             </TouchableOpacity>
+            {/* <View className="mt-8"> */}
+            <TouchableOpacity>
+              <Text className="font-rubik-bold mt-5 justify-end text-right">
+                Forgot Password?
+              </Text>
+            </TouchableOpacity>
+            {/* </View> */}
           </View>
         </View>
         {/* </KeyboardAvoidingView> */}
