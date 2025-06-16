@@ -6,6 +6,7 @@ import "../global.css";
 import { useFonts } from "expo-font";
 import { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import auth from "@react-native-firebase/auth";
+import { SafeAreaView } from "react-native-safe-area-context";
 // import { GlobalProvider } from "@/lib/globalProvider";
 
 // Keep the splash screen visible while we fetch resources
@@ -49,6 +50,14 @@ const RootLayout = () => {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) return null;
+
+  if (initializing) {
+    return (
+      <SafeAreaView className="flex-1 items-center justify-center">
+        <Text>Loading...</Text>
+      </SafeAreaView>
+    );
+  }
 
   return (
     // <GlobalProvider>
