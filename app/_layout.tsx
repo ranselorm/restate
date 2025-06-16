@@ -1,11 +1,38 @@
 import { Text, View } from "react-native";
-import React, { useEffect } from "react";
-import { Slot, SplashScreen, Stack } from "expo-router";
+import React, { useEffect, useState } from "react";
+import { Slot, Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import "../global.css";
 import { useFonts } from "expo-font";
-import { GlobalProvider } from "@/lib/globalProvider";
+import { FirebaseAuthTypes } from "@react-native-firebase/auth";
+import auth from "@react-native-firebase/auth";
+// import { GlobalProvider } from "@/lib/globalProvider";
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
+
+SplashScreen.setOptions({
+  duration: 1000,
+  fade: true,
+});
 
 const RootLayout = () => {
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>();
+
+  const onAuthStateChanged = (user: FirebaseAuthTypes.User | null) => {
+    console.log(user, "Auth state changed: ");
+    setUser(user);
+    if (initializing) {
+      setInitializing(false);
+    }
+  };
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  }, []);
+
   const [fontsLoaded] = useFonts({
     "Rubik-Bold": require("../assets/fonts/Rubik-Bold.ttf"),
     "Rubik-ExtraBold": require("../assets/fonts/Rubik-ExtraBold.ttf"),
@@ -17,7 +44,7 @@ const RootLayout = () => {
 
   useEffect(() => {
     if (fontsLoaded) {
-      SplashScreen.hideAsync();
+      SplashScreen.hide();
     }
   }, [fontsLoaded]);
 
