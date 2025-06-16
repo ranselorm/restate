@@ -63,7 +63,7 @@ const SignIn = () => {
                 E-Mail
               </Text>
               <TextInput
-                placeholder="email"
+                placeholder="Enter your e-mail"
                 autoCapitalize="none"
                 className="border border-gray-300 pl-4 pr-3 py-3 rounded-lg text-base font-rubik"
                 placeholderTextColor="#A0A0A0"
@@ -77,9 +77,9 @@ const SignIn = () => {
               </Text>
 
               <TextInput
-                placeholder="password"
+                placeholder="Enter your password"
                 autoCapitalize="none"
-                className="border border-gray-300 pl-4 pr-3 py-3 rounded-md text-base font-rubik"
+                className="border border-gray-300 pl-4 pr-3 py-3 rounded-lg text-base font-rubik"
                 placeholderTextColor="#A0A0A0"
                 secureTextEntry
                 textContentType="password"
@@ -103,6 +103,20 @@ const SignIn = () => {
                 Forgot Password?
               </Text>
             </TouchableOpacity>
+            <View className="justify-center items-center mt-5">
+              <Text>or</Text>
+
+              <TouchableOpacity
+                onPress={() => router.push("/sign-up")}
+                className="mt-5 border-gray-300 border py-3 rounded-lg justify-center items-center w-full flex-row gap-x-4"
+              >
+                <Image source={icons.google} className="w-5 h-5 mr-3" />
+                <Text className="uppercase items-center justify-center text-base font-rubik-medium text-black-200 flex-row gap-x-4 space-x-4">
+                  {" "}
+                  Continue with Google
+                </Text>
+              </TouchableOpacity>
+            </View>
             {/* </View> */}
           </View>
         </View>
