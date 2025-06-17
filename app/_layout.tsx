@@ -7,9 +7,7 @@ import { useFonts } from "expo-font";
 import { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import auth from "@react-native-firebase/auth";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import { GlobalProvider } from "@/lib/globalProvider";
 
-// Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
 SplashScreen.setOptions({
