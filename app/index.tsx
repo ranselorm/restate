@@ -59,9 +59,6 @@ const Home = () => {
             Let's Get You Closer To {"\n"}
             <Text className="text-primary-100">Your Ideal Home</Text>
           </Text>
-          {/* <Text className="text-center mt-10 font-rubik text-black-200 text-lg ">
-            Login to Restate
-          </Text> */}
           <TouchableOpacity
             onPress={() => router.push("/sign-in")}
             className="bg-primary-100 shadow-zinc-300 shadow-md py-3 rounded-lg flex-row justify-center items-center w-full gap-x-4 mt-24"
