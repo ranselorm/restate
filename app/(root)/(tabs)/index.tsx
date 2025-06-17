@@ -1,6 +1,5 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
 import auth from "@react-native-firebase/auth";
 
 const Home = () => {
