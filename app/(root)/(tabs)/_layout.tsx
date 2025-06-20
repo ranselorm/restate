@@ -4,17 +4,17 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { useColorScheme } from "react-native";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+// import { useSelector } from "react-redux";
+// import { RootState } from "@/store/store";
 
 export default function TabsLayout() {
-  const user = useSelector((state: RootState) => state.user.user);
+  //   const user = useSelector((state: RootState) => state.user.user);
   const colorScheme = useColorScheme();
   const isDarkMode = colorScheme === "dark";
 
-  if (!user?.isLoggedIn) {
-    return <Redirect href="/(auth)/login" />;
-  }
+  //   if (!user?.isLoggedIn) {
+  //     return <Redirect href="/(auth)/login" />;
+  //   }
 
   return (
     <Tabs
