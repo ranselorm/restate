@@ -75,9 +75,9 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="genealogy"
+        name="properties"
         options={{
-          title: "Genealogy",
+          title: "Properties",
           tabBarIcon: ({ focused }: { focused: boolean }) => (
             <View className="items-center">
               <MaterialCommunityIcons
@@ -111,43 +111,7 @@ export default function TabsLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="transactions"
-        options={{
-          title: "Transactions",
-          tabBarIcon: ({ focused }: { focused: boolean }) => (
-            <View className="items-center">
-              <FontAwesome
-                name="exchange"
-                size={24}
-                color={`${isDarkMode ? "white" : "black"}`}
-              />
-              {focused ? (
-                <View
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 3,
-                    backgroundColor: "orange",
-                    marginTop: 4,
-                  }}
-                />
-              ) : (
-                <View
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 3,
-                    backgroundColor: "orange",
-                    marginTop: 4,
-                    opacity: 0,
-                  }}
-                />
-              )}
-            </View>
-          ),
-        }}
-      />
+
       <Tabs.Screen
         name="profile"
         options={{
